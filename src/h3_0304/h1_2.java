@@ -11,17 +11,19 @@ public class h1_2 {
 
 			for (int j = 0; j < num[i].length(); j++) {
 				if (num[i].charAt(j) == '3' || num[i].charAt(j) == '6' || num[i].charAt(j) == '9')
+					System.out.print("짝 ");
 					check = true;
 			}
 
 			if (check == true) {
-				System.out.print("짝 ");
 				check = false;
 			} else {
-				System.out.print(num[i] + " ");
+				System.out.print(num[i]);
 			}
+			
+			System.out.println(" ");
 
-			if (i % 5 == 0 && i != 0)
+			if (i % 10 == 0 && i != 0)
 				System.out.println("\n");
 		}
 
