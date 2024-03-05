@@ -4,14 +4,20 @@ package h4;
 public class H1_lotto {
 	public static void main(String[] args) {
 		int[] lotto = new int[6];
-
+		boolean check = false;
 		// 6개의 숫자를 임의로 뽑아서 배열에 저장
-
+		
+		
+		//그 다음 비교
 		for (int i = 0; i < lotto.length; i++) {
 			int su = (int) (Math.random() * 45) + 1;
 			lotto[i] = su;
+			
+			for (int j = 0; j < i; j++) {
+				if(lotto[i] == lotto[j]) i--;
+			}
 		}
-
+		
 		// 6개의 로또 번호를 정렬해서 출력;
 		int temp = 0;
 		for (int i = 0; i < lotto.length - 1; i++) {
