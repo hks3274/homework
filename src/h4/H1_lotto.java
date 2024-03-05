@@ -1,5 +1,6 @@
 package h4;
 
+//1~45숫자 중 6개의 수를 추출 후 정렬해서 출력해보자(중복배제) ==> 숙제
 public class H1_lotto {
 	public static void main(String[] args) {
 		int[] lotto = new int[6];
