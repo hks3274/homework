@@ -1,13 +1,11 @@
-package h1_0312;
+package h9_0312;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Test2 {
 	public static void main(String[] args) {
 		int cnt = 0, i = 0;
 		boolean check = false;
-		int[] result = new int[100];
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("문자열을 입력해 주세요 :");
@@ -37,8 +35,7 @@ public class Test2 {
 			while (true) {
 
 				i = msg1.lastIndexOf(findWord);
-				if (i == -1)
-					break;
+				if (i == -1) break;
 				msg1 = msg1.substring(0, i);
 				if (check) {
 					System.out.print(i+"번지부터");
