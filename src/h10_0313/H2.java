@@ -1,6 +1,6 @@
 package h10_0313;
 
-import java.util.Objects;
+
 import java.util.Scanner;
 
 /*
@@ -42,17 +42,20 @@ public class H2 {
 			String id = sc.next();
 			String[] idChar = id.split("");
 
-			if (idChar.length > 3 && idChar.length < 20) {
-				for (int i = 0; i < idChar.length; i++) { // 유니코드 48~57 = 숫자, 65~90= 대문자, 67~122=영어 소문자, 95=_(밑줄)
-					if ((idChar[i].charAt(0) >= 48 && idChar[i].charAt(0) <= 57)
-							|| (idChar[i].charAt(0) >= 65 && idChar[i].charAt(0) <= 90)
-							|| (idChar[i].charAt(0) >= 97 && idChar[i].charAt(0) <= 122) || idChar[i].charAt(0) == 95) {
+			if (idChar.length > 3 && idChar.length < 21) {
+				for (int i = 0; i < idChar.length; i++) { // 아스키코드 48~57 = 숫자, 65~90= 대문자, 67~122=영어 소문자, 95=_(밑줄)
+					int checkChar = idChar[i].charAt(0);
+					if ((checkChar >= 48 && checkChar<= 57)
+							|| (checkChar >= 65 && checkChar <= 90)
+							|| (checkChar >= 97 && checkChar <= 122)|| checkChar == 95) {
 						check = true;
-					} else
+					} else {
 						check = false;
+						break;
+					}
 				}
-			} else check = false;
-
+			} 
+			
 			if (check) {
 				System.out.println("입력된 아이디 " + id + "는 사용할 수 있습니다.");
 				System.out.println(id + "은 로그인 되었습니다");
